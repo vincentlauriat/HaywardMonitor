@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+
+# Xcode
+*.xcodeproj/
+DerivedData/
+build/
+release/
+*.dmg
+*.zip
+
+# Session docs (règle DevApps)
+COMMANDS.md
+MEMORY.md
+CHANGES.md
+TODOS.md
+PLAN.md
+
+# OMC
+.omc/

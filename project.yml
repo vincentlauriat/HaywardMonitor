@@ -1,0 +1,47 @@
+name: HaywardMonitor
+options:
+  bundleIdPrefix: com.vincentlauriat
+  deploymentTarget:
+    macOS: "14.0"
+
+schemes:
+  HaywardMonitor:
+    build:
+      targets:
+        HaywardMonitor: all
+    run:
+      config: Debug
+
+targets:
+  HaywardMonitor:
+    type: application
+    platform: macOS
+    deploymentTarget: "14.0"
+    sources:
+      - path: HaywardMonitor
+        excludes:
+          - "**/*.entitlements"
+          - "Info.plist"
+    settings:
+      base:
+        PRODUCT_NAME: Hayward Monitor
+        PRODUCT_BUNDLE_IDENTIFIER: com.vincentlauriat.haywardmonitor
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        SWIFT_VERSION: "5.9"
+        MARKETING_VERSION: "0.1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        MACOSX_DEPLOYMENT_TARGET: "14.0"
+        CODE_SIGN_ENTITLEMENTS: HaywardMonitor/HaywardMonitor.entitlements
+        CODE_SIGN_IDENTITY: ""
+        CODE_SIGNING_REQUIRED: NO
+        CODE_SIGNING_ALLOWED: NO
+    info:
+      path: HaywardMonitor/Info.plist
+      properties:
+        CFBundleName: Hayward Monitor
+        CFBundleDisplayName: Hayward Monitor
+        CFBundleIdentifier: com.vincentlauriat.haywardmonitor
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        LSMinimumSystemVersion: "14.0"
+        NSHumanReadableCopyright: ""
