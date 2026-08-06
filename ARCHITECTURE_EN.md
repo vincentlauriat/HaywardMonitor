@@ -32,6 +32,7 @@
 | Actor for `HaywardAPI` | Serializes token refresh and request state. |
 | Post-command refetch (2 s) | UI reflects device-acknowledged state instead of optimistic guesses. |
 | Keychain credentials | Email/password needed for re-auth; never stored in files. |
+| Sparkle 2 auto-update | EdDSA-signed appcast served from the repo (`main/appcast.xml`); background checks only, install always requires user consent. Sandboxed app → InstallerLauncher XPC service + mach-lookup exceptions. |
 
 ## Write protocol
 

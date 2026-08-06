@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hayward Monitor — Control your pool from your Mac</title>
+<meta name="description" content="Native macOS app to monitor and control a Hayward AquaRite / Sugar Valley NeoPool swimming-pool system. Signed, notarized, auto-updating.">
+<link rel="icon" href="assets/icon-256.png">
+<style>
+  :root{
+    --bg:#06131f;--bg2:#0a1e30;--card:#0e2438;--line:#1c3a52;
+    --txt:#e8f1f8;--sub:#9db4c6;--acc:#38bdf8;--acc2:#22d3ee;--grad:linear-gradient(135deg,#38bdf8,#2dd4bf);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--txt);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+  a{color:var(--acc)}
+  /* language switching */
+  .fr,.zh{display:none}
+  html[data-lang="fr"] .en,html[data-lang="fr"] .zh{display:none}
+  html[data-lang="fr"] .fr{display:inline}
+  html[data-lang="zh"] .en,html[data-lang="zh"] .fr{display:none}
+  html[data-lang="zh"] .zh{display:inline}
+  p .en,p .fr,p .zh,h1 .en,h1 .fr,h1 .zh,h2 .en,h2 .fr,h2 .zh,h3 .en,h3 .fr,h3 .zh{display:none}
+  html[data-lang="en"] .en{display:inline}
+  html[data-lang="fr"] .fr{display:inline}
+  html[data-lang="zh"] .zh{display:inline}
+  .langbar{position:fixed;top:14px;right:18px;z-index:10;display:flex;gap:4px;background:rgba(14,36,56,.85);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:999px;padding:4px}
+  .langbar button{background:none;border:none;color:var(--sub);font:13px/1 inherit;padding:6px 12px;border-radius:999px;cursor:pointer}
+  .langbar button.on{background:var(--acc);color:#04121d;font-weight:600}
+  header{padding:88px 0 48px;text-align:center;background:radial-gradient(ellipse at 50% -20%,#134662 0%,var(--bg) 62%)}
+  .appicon{width:128px;height:128px;margin-bottom:20px}
+  h1{font-size:clamp(30px,5vw,46px);line-height:1.15;font-weight:700;letter-spacing:-.02em}
+  .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .tagline{color:var(--sub);font-size:19px;max-width:640px;margin:18px auto 0}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+  .btn{display:inline-block;padding:13px 26px;border-radius:12px;font-weight:600;text-decoration:none}
+  .btn-dl{background:var(--grad);color:#04121d}
+  .btn-gh{border:1px solid var(--line);color:var(--txt)}
+  .req{color:var(--sub);font-size:13px;margin-top:14px}
+  .shot{display:block;width:100%;max-width:880px;margin:56px auto 0;border-radius:14px;border:1px solid var(--line);box-shadow:0 24px 80px rgba(0,0,0,.5)}
+  section{padding:64px 0}
+  h2{font-size:28px;margin-bottom:28px;text-align:center}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .card .ico{font-size:26px;margin-bottom:10px}
+  .card h3{font-size:17px;margin-bottom:8px}
+  .card p{color:var(--sub);font-size:14.5px}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;counter-reset:step}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;counter-increment:step}
+  .step::before{content:counter(step);display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;background:var(--grad);color:#04121d;font-weight:700;border-radius:8px;margin-bottom:12px}
+  .step h3{font-size:16px;margin-bottom:6px}
+  .step p{color:var(--sub);font-size:14px}
+  .note{max-width:720px;margin:0 auto;color:var(--sub);font-size:13.5px;text-align:center}
+  footer{border-top:1px solid var(--line);padding:36px 0;color:var(--sub);font-size:14px;text-align:center}
+  footer a{color:var(--sub)}
+</style>
+</head>
+<body>
+<div class="langbar" role="group" aria-label="Language">
+  <button data-l="en" class="on">EN</button><button data-l="fr">FR</button><button data-l="zh">中文</button>
+</div>
+
+<header>
+  <div class="wrap">
+    <img class="appicon" src="assets/icon-256.png" alt="Hayward Monitor icon">
+    <h1>
+      <span class="en">Your pool, from your Mac.<br><span class="grad">Native. Signed. Auto-updating.</span></span>
+      <span class="fr">Votre piscine, depuis votre Mac.<br><span class="grad">Natif. Signé. Auto-mis à jour.</span></span>
+      <span class="zh">在 Mac 上掌控您的泳池。<br><span class="grad">原生、已签名、自动更新。</span></span>
+    </h1>
+    <p class="tagline">
+      <span class="en">Hayward Monitor is a native macOS app for Hayward AquaRite / Sugar Valley NeoPool systems — the pools driven by the PoolWatch and Vistapool iPhone apps. Dashboard, controls and setpoints, right on your desktop.</span>
+      <span class="fr">Hayward Monitor est une app macOS native pour les systèmes Hayward AquaRite / Sugar Valley NeoPool — les piscines pilotées par les apps iPhone PoolWatch et Vistapool. Tableau de bord, commandes et consignes, directement sur votre bureau.</span>
+      <span class="zh">Hayward Monitor 是一款原生 macOS 应用，适用于 Hayward AquaRite / Sugar Valley NeoPool 系统（即 PoolWatch 和 Vistapool iPhone 应用所控制的泳池）。仪表盘、控制与设定值，尽在您的桌面。</span>
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-dl" href="https://github.com/vincentlauriat/HaywardMonitor/releases/latest">
+        <span class="en">Download for macOS</span><span class="fr">Télécharger pour macOS</span><span class="zh">下载 macOS 版</span>
+      </a>
+      <a class="btn btn-gh" href="https://github.com/vincentlauriat/HaywardMonitor">GitHub</a>
+    </div>
+    <p class="req">
+      <span class="en">macOS 14+ · Developer ID signed & notarized · Sparkle 2 updates · MIT license</span>
+      <span class="fr">macOS 14+ · Signée Developer ID &amp; notariée · Mises à jour Sparkle 2 · Licence MIT</span>
+      <span class="zh">macOS 14+ · Developer ID 签名并经公证 · Sparkle 2 更新 · MIT 许可证</span>
+    </p>
+    <img class="shot" src="assets/screenshot.png" alt="Hayward Monitor dashboard">
+  </div>
+</header>
+
+<section id="features">
+  <div class="wrap">
+    <h2><span class="en">Everything the pool does, one window</span><span class="fr">Tout ce que fait la piscine, une seule fenêtre</span><span class="zh">泳池的一切，一个窗口</span></h2>
+    <div class="cards">
+      <div class="card"><div class="ico">🌡️</div>
+        <h3><span class="en">Live dashboard</span><span class="fr">Tableau de bord en direct</span><span class="zh">实时仪表盘</span></h3>
+        <p><span class="en">Water temperature, pH, redox, chlorine, electrolysis output and WiFi signal — refreshed every 30 seconds.</span><span class="fr">Température de l'eau, pH, redox, chlore, production d'électrolyse et signal WiFi — rafraîchis toutes les 30 secondes.</span><span class="zh">水温、pH、氧化还原电位、氯、电解产量与 WiFi 信号——每 30 秒刷新。</span></p></div>
+      <div class="card"><div class="ico">💧</div>
+        <h3><span class="en">Full control</span><span class="fr">Contrôle complet</span><span class="zh">全面控制</span></h3>
+        <p><span class="en">Filtration and pump modes, pool light with scheduling, electrolysis boost, cover mode, four aux relays.</span><span class="fr">Filtration et modes pompe, éclairage avec programmation, boost électrolyse, mode volet, quatre relais auxiliaires.</span><span class="zh">过滤与水泵模式、可编程照明、电解增强、泳池盖模式、四路辅助继电器。</span></p></div>
+      <div class="card"><div class="ico">🎯</div>
+        <h3><span class="en">Setpoints</span><span class="fr">Consignes</span><span class="zh">设定值</span></h3>
+        <p><span class="en">pH min/max, redox target and electrolysis production, applied explicitly — no accidental changes.</span><span class="fr">pH min/max, cible redox et production d'électrolyse, appliquées explicitement — pas de changement accidentel.</span><span class="zh">pH 上下限、氧化还原目标与电解产量，需显式应用——避免误操作。</span></p></div>
+      <div class="card"><div class="ico">🔐</div>
+        <h3><span class="en">Private by design</span><span class="fr">Privé par conception</span><span class="zh">隐私优先</span></h3>
+        <p><span class="en">Your PoolWatch credentials live in the macOS Keychain. Sandboxed app, HTTPS only, no analytics, open source.</span><span class="fr">Vos identifiants PoolWatch restent dans le Trousseau macOS. App sandboxée, HTTPS uniquement, zéro télémétrie, open source.</span><span class="zh">您的 PoolWatch 凭据保存在 macOS 钥匙串中。沙盒应用、仅 HTTPS、无遥测、开源。</span></p></div>
+      <div class="card"><div class="ico">🚀</div>
+        <h3><span class="en">One-click updates</span><span class="fr">Mises à jour en un clic</span><span class="zh">一键更新</span></h3>
+        <p><span class="en">Sparkle 2 + notarized DMGs + EdDSA signatures — Check for Updates… downloads, swaps and relaunches.</span><span class="fr">Sparkle 2 + DMG notariés + signatures EdDSA — Rechercher les mises à jour… télécharge, remplace et relance.</span><span class="zh">Sparkle 2 + 已公证 DMG + EdDSA 签名——检查更新即可下载、替换并重启。</span></p></div>
+      <div class="card"><div class="ico">🧩</div>
+        <h3><span class="en">No SDK, pure REST</span><span class="fr">Pas de SDK, REST pur</span><span class="zh">无 SDK，纯 REST</span></h3>
+        <p><span class="en">Talks to the same Hayward cloud as the official apps through three documented endpoints. Nothing else.</span><span class="fr">Parle au même cloud Hayward que les apps officielles via trois endpoints documentés. Rien d'autre.</span><span class="zh">通过三个已记录的端点与官方应用相同的 Hayward 云通信,仅此而已。</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="install" style="background:var(--bg2)">
+  <div class="wrap">
+    <h2><span class="en">Installed in a minute</span><span class="fr">Installée en une minute</span><span class="zh">一分钟完成安装</span></h2>
+    <div class="steps">
+      <div class="step"><h3><span class="en">Download</span><span class="fr">Télécharger</span><span class="zh">下载</span></h3>
+        <p><span class="en">Grab the latest signed .dmg from GitHub Releases and mount it.</span><span class="fr">Récupérez le dernier .dmg signé depuis GitHub Releases et montez-le.</span><span class="zh">从 GitHub Releases 获取最新签名的 .dmg 并挂载。</span></p></div>
+      <div class="step"><h3><span class="en">Drag &amp; drop</span><span class="fr">Glisser-déposer</span><span class="zh">拖放</span></h3>
+        <p><span class="en">Drop Hayward Monitor into /Applications. Gatekeeper accepts it — notarized by Apple.</span><span class="fr">Déposez Hayward Monitor dans /Applications. Gatekeeper l'accepte — notariée par Apple.</span><span class="zh">将 Hayward Monitor 拖入 /Applications。已经 Apple 公证，Gatekeeper 直接放行。</span></p></div>
+      <div class="step"><h3><span class="en">Sign in</span><span class="fr">Connexion</span><span class="zh">登录</span></h3>
+        <p><span class="en">Use your PoolWatch / Vistapool account. Your pool appears; you're in control.</span><span class="fr">Utilisez votre compte PoolWatch / Vistapool. Votre piscine apparaît ; vous avez la main.</span><span class="zh">使用您的 PoolWatch / Vistapool 账户登录，泳池即刻呈现，尽在掌控。</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="note">
+      <span class="en">Unofficial project — not affiliated with Hayward or Sugar Valley. It controls your own pool through your own account, using the same cloud API as the official apps.</span>
+      <span class="fr">Projet non officiel — sans affiliation avec Hayward ou Sugar Valley. Il pilote votre propre piscine via votre propre compte, avec la même API cloud que les apps officielles.</span>
+      <span class="zh">非官方项目——与 Hayward 或 Sugar Valley 无关。它通过您自己的账户、使用与官方应用相同的云 API 控制您自己的泳池。</span>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 <a href="https://lauriat.fr">Vincent Lauriat</a> ·
+      <a href="https://github.com/vincentlauriat/HaywardMonitor">GitHub</a> ·
+      <a href="https://github.com/vincentlauriat/HaywardMonitor/releases">Releases</a> ·
+      MIT</p>
+  </div>
+</footer>
+
+<script>
+  const html=document.documentElement,btns=document.querySelectorAll('.langbar button');
+  const saved=localStorage.getItem('hm-lang')||(navigator.language.startsWith('fr')?'fr':navigator.language.startsWith('zh')?'zh':'en');
+  setLang(saved);
+  btns.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.l)));
+  function setLang(l){html.dataset.lang=l;localStorage.setItem('hm-lang',l);btns.forEach(b=>b.classList.toggle('on',b.dataset.l===l));}
+</script>
+</body>
+</html>
