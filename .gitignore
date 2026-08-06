@@ -16,5 +16,8 @@ CHANGES.md
 TODOS.md
 PLAN.md
 
+# Sparkle CLI tools (fetched by release.sh)
+.sparkle-tools/
+
 # OMC
 .omc/

@@ -4,6 +4,11 @@ options:
   deploymentTarget:
     macOS: "14.0"
 
+packages:
+  Sparkle:
+    url: https://github.com/sparkle-project/Sparkle
+    from: "2.9.1"
+
 schemes:
   HaywardMonitor:
     build:
@@ -22,14 +27,16 @@ targets:
         excludes:
           - "**/*.entitlements"
           - "Info.plist"
+    dependencies:
+      - package: Sparkle
     settings:
       base:
         PRODUCT_NAME: Hayward Monitor
         PRODUCT_BUNDLE_IDENTIFIER: com.vincentlauriat.haywardmonitor
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         SWIFT_VERSION: "5.9"
-        MARKETING_VERSION: "0.1.0"
-        CURRENT_PROJECT_VERSION: "1"
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "2"
         MACOSX_DEPLOYMENT_TARGET: "14.0"
         CODE_SIGN_ENTITLEMENTS: HaywardMonitor/HaywardMonitor.entitlements
         CODE_SIGN_IDENTITY: ""
@@ -45,3 +52,8 @@ targets:
         CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
         LSMinimumSystemVersion: "14.0"
         NSHumanReadableCopyright: ""
+        SUFeedURL: "https://raw.githubusercontent.com/vincentlauriat/HaywardMonitor/main/appcast.xml"
+        SUPublicEDKey: "wEiO717vayiZ+jMKejHV3TZFsm+Mm7IjKO/1+zJD/VE="
+        SUEnableAutomaticChecks: true
+        SUScheduledCheckInterval: 86400
+        SUEnableInstallerLauncherService: true

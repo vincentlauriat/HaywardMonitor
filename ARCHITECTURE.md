@@ -32,6 +32,7 @@
 | Actor pour `HaywardAPI` | Sérialise le refresh de jeton et l'état des requêtes. |
 | Refetch post-commande (2 s) | L'UI reflète l'état confirmé par l'appareil, pas une supposition optimiste. |
 | Identifiants en Trousseau | Email/mot de passe nécessaires à la ré-auth ; jamais stockés en fichier. |
+| Auto-update Sparkle 2 | Appcast signé EdDSA servi depuis le repo (`main/appcast.xml`) ; vérifications en arrière-plan seulement, installation toujours avec consentement. App sandboxée → service XPC InstallerLauncher + exceptions mach-lookup. |
 
 ## Protocole d'écriture
 
