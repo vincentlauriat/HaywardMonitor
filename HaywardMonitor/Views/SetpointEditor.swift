@@ -45,9 +45,10 @@ struct SetpointEditor: View {
                     .font(.caption)
                     .foregroundStyle(.secondary)
                 Spacer()
+                // No .defaultAction here: the pH popover holds two editors,
+                // and two default buttons in one view make Return ambiguous.
                 Button("Appliquer") { apply(value) }
                     .disabled(isUnchanged)
-                    .keyboardShortcut(.defaultAction)
             }
         }
         .onAppear(perform: syncFromDevice)

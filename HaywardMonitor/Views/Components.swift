@@ -227,10 +227,13 @@ struct MetricGauge<Settings: View>: View {
             HStack(spacing: 4) {
                 Text(title)
                     .font(.caption.weight(.medium))
-                if isAdjustable && hovering {
+                // Always visible, brighter on hover: a hover-only glyph
+                // would leave "this setpoint is editable" undiscoverable.
+                if isAdjustable {
                     Image(systemName: "slider.horizontal.3")
                         .font(.system(size: 9))
                         .foregroundStyle(.secondary)
+                        .opacity(hovering ? 1 : 0.5)
                 }
             }
 
