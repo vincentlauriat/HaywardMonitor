@@ -4,7 +4,7 @@
 
 ```
 ┌─────────────────────────── App macOS (SwiftUI) ───────────────────────────┐
-│  Vues (Login / Dashboard / Consignes)                                     │
+│  Vues (Login / Dashboard : jauges + lignes d'équipement)                  │
 │        │ @EnvironmentObject                                               │
 │  AppModel (@MainActor) — session, polling 30 s, actions de commande       │
 │        │ async/await                                                      │
@@ -32,6 +32,8 @@
 | Actor pour `HaywardAPI` | Sérialise le refresh de jeton et l'état des requêtes. |
 | Refetch post-commande (2 s) | L'UI reflète l'état confirmé par l'appareil, pas une supposition optimiste. |
 | Identifiants en Trousseau | Email/mot de passe nécessaires à la ré-auth ; jamais stockés en fichier. |
+| Consigne éditée dans le popover de sa jauge | La valeur se règle là où elle se lit ; supprime la section « Consignes » et le scroll qu'elle imposait. |
+| `pendingPaths` dans `AppModel` | Le boîtier met ~20 s à confirmer : la ligne touchée affiche un spinner au lieu de laisser croire que rien ne se passe. |
 | Auto-update Sparkle 2 | Appcast signé EdDSA servi depuis le repo (`main/appcast.xml`) ; vérifications en arrière-plan seulement, installation toujours avec consentement. App sandboxée → service XPC InstallerLauncher + exceptions mach-lookup. |
 
 ## Protocole d'écriture

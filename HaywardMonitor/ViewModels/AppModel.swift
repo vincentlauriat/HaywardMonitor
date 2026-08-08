@@ -16,7 +16,19 @@ final class AppModel: ObservableObject {
     @Published var pool: PoolState?
     @Published var lastUpdate: Date?
     @Published var errorMessage: String?
-    @Published var isBusy = false
+    /// Document paths whose command was sent but not yet acknowledged by
+    /// the device — the box can take ~20 s, so the row that was touched
+    /// shows a spinner instead of leaving the user guessing.
+    @Published private(set) var pendingPaths: Set<String> = []
+
+    /// True while any command is in flight. Derived from `pendingPaths`
+    /// so two overlapping commands can't clear it early.
+    var isBusy: Bool { !pendingPaths.isEmpty }
+
+    /// True while a command touching `prefix` (e.g. `"light."`) is in flight.
+    func isPending(_ prefix: String) -> Bool {
+        pendingPaths.contains { $0.hasPrefix(prefix) }
+    }
 
     private let api = HaywardAPI()
     private var pollTask: Task<Void, Never>?
@@ -112,10 +124,11 @@ final class AppModel: ObservableObject {
 
         applyOptimistic(allValues)
 
-        isBusy = true
         errorMessage = nil
+        let touched = Set(allValues.map(\.0))
+        pendingPaths.formUnion(touched)
         Task {
-            defer { isBusy = false }
+            defer { pendingPaths.subtract(touched) }
             do {
                 try await api.setValues(poolId: poolId, poolData: commandData, values: allValues)
                 for _ in 0..<7 {
