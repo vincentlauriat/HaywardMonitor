@@ -6,16 +6,16 @@
     <description>Hayward Monitor release feed</description>
     <language>en</language>
     <item>
-      <title>v1.0.0</title>
-      <pubDate>Thu, 06 Aug 2026 18:21:28 +0200</pubDate>
-      <sparkle:version>2</sparkle:version>
-      <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+      <title>v1.1.0</title>
+      <pubDate>Sat, 08 Aug 2026 20:29:35 +0200</pubDate>
+      <sparkle:version>3</sparkle:version>
+      <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://github.com/vincentlauriat/HaywardMonitor/releases/tag/v1.0.0</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://github.com/vincentlauriat/HaywardMonitor/releases/tag/v1.1.0</sparkle:releaseNotesLink>
       <enclosure
-        url="https://github.com/vincentlauriat/HaywardMonitor/releases/download/v1.0.0/HaywardMonitor-1.0.0.dmg"
+        url="https://github.com/vincentlauriat/HaywardMonitor/releases/download/v1.1.0/HaywardMonitor-1.1.0.dmg"
         type="application/octet-stream"
-        sparkle:edSignature="/mnJwDijZoK48DXIrtrAlF1Iye6drEN6JqxrKJqyqmmMLPbcJY2Uj0UMA4pSp8FvCdLGbu8A52+pHqyW00vwBg==" length="1749049" />
+        sparkle:edSignature="anFBOv+0wKTXLGXh1IFSZV610KGu5OKdcCbyDW8tTxjRvDPPygT4h60W92edxTjipU1vD8qn4H3nZ0InJQYlDA==" length="2201829" />
     </item>
   </channel>
 </rss>
