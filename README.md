@@ -21,7 +21,7 @@ PoolWatch / Vistapool iPhone apps.
 | Filtration on/off, pump mode & speed | ✅ |
 | Pool light with on/off/scheduled selector and time range | ✅ |
 | Electrolysis boost, cover mode, aux relays 1-4 | ✅ |
-| Setpoints: pH min/max, redox, electrolysis production | ✅ |
+| Setpoints (pH min/max, redox, electrolysis) edited in the gauge's popover | ✅ |
 | Auto-refresh (30 s polling) | ✅ |
 | In-app auto-update (Sparkle 2, EdDSA-signed, notarized DMGs) | ✅ |
 | Menu bar extra, real-time push, history charts | 🔜 |
@@ -74,6 +74,7 @@ HaywardMonitor/
 ├── project.yml                 # xcodegen definition (Sparkle SPM, Info.plist keys)
 ├── appcast.xml                 # Sparkle 2 update feed (written by release.sh)
 ├── Scripts/release.sh          # build → sign → notarize → DMG → appcast → GitHub release
+├── Scripts/make-icon.swift     # regenerates every AppIcon size + the landing copy
 ├── docs/                       # landing page (GitHub Pages) + assets
 └── HaywardMonitor/
     ├── HaywardMonitorApp.swift     # app entry + Sparkle updater wiring
@@ -84,7 +85,7 @@ HaywardMonitor/
     │   ├── FirestoreDecoder.swift  # Firestore REST envelope decoding
     │   └── KeychainStore.swift
     ├── ViewModels/AppModel.swift   # session, polling, command actions
-    └── Views/                      # Login, Dashboard, Setpoints
+    └── Views/                      # Login, Dashboard, gauges & device rows
 ```
 
 ## Roadmap

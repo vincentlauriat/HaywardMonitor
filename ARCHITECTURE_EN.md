@@ -4,7 +4,7 @@
 
 ```
 ┌─────────────────────────── macOS app (SwiftUI) ───────────────────────────┐
-│  Views (Login / Dashboard / Setpoints)                                    │
+│  Views (Login / Dashboard: gauges + device rows)                          │
 │        │ @EnvironmentObject                                               │
 │  AppModel (@MainActor) — session, 30 s polling, command actions           │
 │        │ async/await                                                      │
@@ -32,6 +32,8 @@
 | Actor for `HaywardAPI` | Serializes token refresh and request state. |
 | Post-command refetch (2 s) | UI reflects device-acknowledged state instead of optimistic guesses. |
 | Keychain credentials | Email/password needed for re-auth; never stored in files. |
+| Setpoint edited in its gauge's popover | A value is adjusted where it is read; removes the separate "Setpoints" section and the scrolling it forced. |
+| `pendingPaths` in `AppModel` | The box takes ~20 s to acknowledge: the row that was touched shows a spinner instead of implying nothing happened. |
 | Sparkle 2 auto-update | EdDSA-signed appcast served from the repo (`main/appcast.xml`); background checks only, install always requires user consent. Sandboxed app → InstallerLauncher XPC service + mach-lookup exceptions. |
 
 ## Write protocol

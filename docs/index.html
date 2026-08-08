@@ -14,6 +14,7 @@
   *{margin:0;padding:0;box-sizing:border-box}
   body{background:var(--bg);color:var(--txt);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
   .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+  .wrap-wide{max-width:1180px;margin:0 auto;padding:0 24px}
   a{color:var(--acc)}
   /* language switching */
   .fr,.zh{display:none}
@@ -28,22 +29,29 @@
   .langbar{position:fixed;top:14px;right:18px;z-index:10;display:flex;gap:4px;background:rgba(14,36,56,.85);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:999px;padding:4px}
   .langbar button{background:none;border:none;color:var(--sub);font:13px/1 inherit;padding:6px 12px;border-radius:999px;cursor:pointer}
   .langbar button.on{background:var(--acc);color:#04121d;font-weight:600}
-  header{padding:88px 0 48px;text-align:center;background:radial-gradient(ellipse at 50% -20%,#134662 0%,var(--bg) 62%)}
-  .appicon{width:128px;height:128px;margin-bottom:20px}
+  header{padding:52px 0 40px;text-align:center;background:radial-gradient(ellipse at 50% -20%,#134662 0%,var(--bg) 62%)}
+  .appicon{width:88px;height:88px;margin-bottom:16px}
   h1{font-size:clamp(30px,5vw,46px);line-height:1.15;font-weight:700;letter-spacing:-.02em}
   .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .tagline{color:var(--sub);font-size:19px;max-width:640px;margin:18px auto 0}
-  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+  .tagline{color:var(--sub);font-size:18px;max-width:600px;margin:16px auto 0}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:24px}
   .btn{display:inline-block;padding:13px 26px;border-radius:12px;font-weight:600;text-decoration:none}
   .btn-dl{background:var(--grad);color:#04121d}
   .btn-gh{border:1px solid var(--line);color:var(--txt)}
   .req{color:var(--sub);font-size:13px;margin-top:14px}
-  .shot{display:block;width:100%;max-width:880px;margin:56px auto 0;border-radius:14px;border:1px solid var(--line);box-shadow:0 24px 80px rgba(0,0,0,.5)}
-  section{padding:64px 0}
+  /* The product shot is the argument — keep it high and large. */
+  .shot-frame{margin:36px auto 0;max-width:1100px;border-radius:16px;padding:8px;
+    background:linear-gradient(180deg,rgba(56,189,248,.18),rgba(45,212,191,.06));
+    border:1px solid var(--line);box-shadow:0 30px 90px rgba(0,0,0,.55)}
+  .shot{display:block;width:100%;border-radius:10px}
+  section{padding:56px 0}
   h2{font-size:28px;margin-bottom:28px;text-align:center}
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
-  .card .ico{font-size:26px;margin-bottom:10px}
+  .card .ico{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;
+    border-radius:10px;background:rgba(56,189,248,.12);color:var(--acc2);margin-bottom:12px}
+  .card .ico svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;
+    stroke-linecap:round;stroke-linejoin:round}
   .card h3{font-size:17px;margin-bottom:8px}
   .card p{color:var(--sub);font-size:14.5px}
   .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;counter-reset:step}
@@ -85,7 +93,11 @@
       <span class="fr">macOS 14+ · Signée Developer ID &amp; notariée · Mises à jour Sparkle 2 · Licence MIT</span>
       <span class="zh">macOS 14+ · Developer ID 签名并经公证 · Sparkle 2 更新 · MIT 许可证</span>
     </p>
-    <img class="shot" src="assets/screenshot.png" alt="Hayward Monitor dashboard">
+  </div>
+  <div class="wrap-wide">
+    <div class="shot-frame">
+      <img class="shot" src="assets/screenshot.png" alt="Hayward Monitor dashboard">
+    </div>
   </div>
 </header>
 
@@ -93,22 +105,22 @@
   <div class="wrap">
     <h2><span class="en">Everything the pool does, one window</span><span class="fr">Tout ce que fait la piscine, une seule fenêtre</span><span class="zh">泳池的一切，一个窗口</span></h2>
     <div class="cards">
-      <div class="card"><div class="ico">🌡️</div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M14 14.8V5a2 2 0 1 0-4 0v9.8a4 4 0 1 0 4 0Z"/><path d="M12 9v6"/></svg></div>
         <h3><span class="en">Live dashboard</span><span class="fr">Tableau de bord en direct</span><span class="zh">实时仪表盘</span></h3>
         <p><span class="en">Water temperature, pH, redox, chlorine, electrolysis output and WiFi signal — refreshed every 30 seconds.</span><span class="fr">Température de l'eau, pH, redox, chlore, production d'électrolyse et signal WiFi — rafraîchis toutes les 30 secondes.</span><span class="zh">水温、pH、氧化还原电位、氯、电解产量与 WiFi 信号——每 30 秒刷新。</span></p></div>
-      <div class="card"><div class="ico">💧</div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.2 6 10a6 6 0 0 1-12 0c0-3.8 6-10 6-10Z"/><path d="M9.5 14.5a2.5 2.5 0 0 0 5 0"/></svg></div>
         <h3><span class="en">Full control</span><span class="fr">Contrôle complet</span><span class="zh">全面控制</span></h3>
         <p><span class="en">Filtration and pump modes, pool light with scheduling, electrolysis boost, cover mode, four aux relays.</span><span class="fr">Filtration et modes pompe, éclairage avec programmation, boost électrolyse, mode volet, quatre relais auxiliaires.</span><span class="zh">过滤与水泵模式、可编程照明、电解增强、泳池盖模式、四路辅助继电器。</span></p></div>
-      <div class="card"><div class="ico">🎯</div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></div>
         <h3><span class="en">Setpoints</span><span class="fr">Consignes</span><span class="zh">设定值</span></h3>
         <p><span class="en">pH min/max, redox target and electrolysis production, applied explicitly — no accidental changes.</span><span class="fr">pH min/max, cible redox et production d'électrolyse, appliquées explicitement — pas de changement accidentel.</span><span class="zh">pH 上下限、氧化还原目标与电解产量，需显式应用——避免误操作。</span></p></div>
-      <div class="card"><div class="ico">🔐</div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4.5" y="10" width="15" height="10.5" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v2.5"/></svg></div>
         <h3><span class="en">Private by design</span><span class="fr">Privé par conception</span><span class="zh">隐私优先</span></h3>
         <p><span class="en">Your PoolWatch credentials live in the macOS Keychain. Sandboxed app, HTTPS only, no analytics, open source.</span><span class="fr">Vos identifiants PoolWatch restent dans le Trousseau macOS. App sandboxée, HTTPS uniquement, zéro télémétrie, open source.</span><span class="zh">您的 PoolWatch 凭据保存在 macOS 钥匙串中。沙盒应用、仅 HTTPS、无遥测、开源。</span></p></div>
-      <div class="card"><div class="ico">🚀</div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3.5v11"/><path d="M8 10.5l4 4 4-4"/><path d="M4.5 16.5v2a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-2"/></svg></div>
         <h3><span class="en">One-click updates</span><span class="fr">Mises à jour en un clic</span><span class="zh">一键更新</span></h3>
         <p><span class="en">Sparkle 2 + notarized DMGs + EdDSA signatures — Check for Updates… downloads, swaps and relaunches.</span><span class="fr">Sparkle 2 + DMG notariés + signatures EdDSA — Rechercher les mises à jour… télécharge, remplace et relance.</span><span class="zh">Sparkle 2 + 已公证 DMG + EdDSA 签名——检查更新即可下载、替换并重启。</span></p></div>
-      <div class="card"><div class="ico">🧩</div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M9 6.5 4 12l5 5.5"/><path d="m15 6.5 5 5.5-5 5.5"/><path d="M13.2 5.5 10.8 18.5"/></svg></div>
         <h3><span class="en">No SDK, pure REST</span><span class="fr">Pas de SDK, REST pur</span><span class="zh">无 SDK，纯 REST</span></h3>
         <p><span class="en">Talks to the same Hayward cloud as the official apps through three documented endpoints. Nothing else.</span><span class="fr">Parle au même cloud Hayward que les apps officielles via trois endpoints documentés. Rien d'autre.</span><span class="zh">通过三个已记录的端点与官方应用相同的 Hayward 云通信,仅此而已。</span></p></div>
     </div>
