@@ -1,0 +1,245 @@
+{
+  "name": "Hayward Monitor",
+  "no": "23",
+  "repo": "vincentlauriat/HaywardMonitor",
+  "url": "https://vincentlauriat.github.io/HaywardMonitor/",
+  "accent": "#38bdf8",
+  "meta": {
+    "title": "Hayward Monitor — Control your pool from your Mac",
+    "description": "Native macOS app to monitor and control a Hayward AquaRite / Sugar Valley NeoPool swimming-pool system. Signed, notarized, auto-updating.",
+    "favicon": "assets/icon-256.png"
+  },
+  "role": {
+    "en": "Native macOS app for Hayward AquaRite / Sugar Valley NeoPool",
+    "fr": "App macOS native pour Hayward AquaRite / Sugar Valley NeoPool",
+    "zh": "适用于 Hayward AquaRite / Sugar Valley NeoPool 的原生 macOS 应用"
+  },
+  "thesis": {
+    "en": "Your pool, from your Mac.<br>Native. Signed. Auto-updating.",
+    "fr": "Votre piscine, depuis votre Mac.<br>Natif. Signé. Auto-mis à jour.",
+    "zh": "在 Mac 上掌控您的泳池。<br>原生、已签名、自动更新。"
+  },
+  "lede": {
+    "en": "Hayward Monitor is a native macOS app for Hayward AquaRite / Sugar Valley NeoPool systems — the pools driven by the PoolWatch and Vistapool iPhone apps. Dashboard, controls and setpoints, right on your desktop.",
+    "fr": "Hayward Monitor est une app macOS native pour les systèmes Hayward AquaRite / Sugar Valley NeoPool — les piscines pilotées par les apps iPhone PoolWatch et Vistapool. Tableau de bord, commandes et consignes, directement sur votre bureau.",
+    "zh": "Hayward Monitor 是一款原生 macOS 应用，适用于 Hayward AquaRite / Sugar Valley NeoPool 系统（即 PoolWatch 和 Vistapool iPhone 应用所控制的泳池）。仪表盘、控制与设定值，尽在您的桌面。"
+  },
+  "actions": [
+    {
+      "primary": true,
+      "href": "https://github.com/vincentlauriat/HaywardMonitor/releases/latest",
+      "label": {
+        "en": "Download for macOS",
+        "fr": "Télécharger pour macOS",
+        "zh": "下载 macOS 版"
+      }
+    },
+    {
+      "href": "https://github.com/vincentlauriat/HaywardMonitor",
+      "label": "GitHub"
+    }
+  ],
+  "facts": [
+    {
+      "k": {
+        "en": "Requires",
+        "fr": "Configuration",
+        "zh": "系统要求"
+      },
+      "v": "macOS 14+"
+    },
+    {
+      "k": {
+        "en": "Distribution",
+        "fr": "Distribution",
+        "zh": "发行"
+      },
+      "v": {
+        "en": "Developer ID signed &amp; notarized",
+        "fr": "Signée Developer ID &amp; notariée",
+        "zh": "Developer ID 签名并经公证"
+      }
+    },
+    {
+      "k": {
+        "en": "Updates",
+        "fr": "Mises à jour",
+        "zh": "更新"
+      },
+      "v": {
+        "en": "Sparkle 2 updates",
+        "fr": "Mises à jour Sparkle 2",
+        "zh": "Sparkle 2 更新"
+      }
+    },
+    {
+      "k": {
+        "en": "Licence",
+        "fr": "Licence",
+        "zh": "许可证"
+      },
+      "v": {
+        "en": "MIT license",
+        "fr": "Licence MIT",
+        "zh": "MIT 许可证"
+      }
+    }
+  ],
+  "hero": {
+    "src": "assets/screenshot.png",
+    "w": 2120,
+    "h": 1225,
+    "dark": true,
+    "alt": "Hayward Monitor dashboard"
+  },
+  "opener": {
+    "h": {
+      "en": "Everything the pool does, one window",
+      "fr": "Tout ce que fait la piscine, une seule fenêtre",
+      "zh": "泳池的一切，一个窗口"
+    }
+  },
+  "features": [
+    {
+      "h": {
+        "en": "Live dashboard",
+        "fr": "Tableau de bord en direct",
+        "zh": "实时仪表盘"
+      },
+      "p": {
+        "en": "Water temperature, pH, redox, chlorine, electrolysis output and WiFi signal — refreshed every 30 seconds.",
+        "fr": "Température de l'eau, pH, redox, chlore, production d'électrolyse et signal WiFi — rafraîchis toutes les 30 secondes.",
+        "zh": "水温、pH、氧化还原电位、氯、电解产量与 WiFi 信号——每 30 秒刷新。"
+      }
+    },
+    {
+      "h": {
+        "en": "Full control",
+        "fr": "Contrôle complet",
+        "zh": "全面控制"
+      },
+      "p": {
+        "en": "Filtration and pump modes, pool light with scheduling, electrolysis boost, cover mode, four aux relays.",
+        "fr": "Filtration et modes pompe, éclairage avec programmation, boost électrolyse, mode volet, quatre relais auxiliaires.",
+        "zh": "过滤与水泵模式、可编程照明、电解增强、泳池盖模式、四路辅助继电器。"
+      }
+    },
+    {
+      "h": {
+        "en": "Setpoints",
+        "fr": "Consignes",
+        "zh": "设定值"
+      },
+      "p": {
+        "en": "pH min/max, redox target and electrolysis production, applied explicitly — no accidental changes.",
+        "fr": "pH min/max, cible redox et production d'électrolyse, appliquées explicitement — pas de changement accidentel.",
+        "zh": "pH 上下限、氧化还原目标与电解产量，需显式应用——避免误操作。"
+      }
+    },
+    {
+      "h": {
+        "en": "Private by design",
+        "fr": "Privé par conception",
+        "zh": "隐私优先"
+      },
+      "p": {
+        "en": "Your PoolWatch credentials live in the macOS Keychain. Sandboxed app, HTTPS only, no analytics, open source.",
+        "fr": "Vos identifiants PoolWatch restent dans le Trousseau macOS. App sandboxée, HTTPS uniquement, zéro télémétrie, open source.",
+        "zh": "您的 PoolWatch 凭据保存在 macOS 钥匙串中。沙盒应用、仅 HTTPS、无遥测、开源。"
+      }
+    },
+    {
+      "h": {
+        "en": "One-click updates",
+        "fr": "Mises à jour en un clic",
+        "zh": "一键更新"
+      },
+      "p": {
+        "en": "Sparkle 2 + notarized DMGs + EdDSA signatures — Check for Updates… downloads, swaps and relaunches.",
+        "fr": "Sparkle 2 + DMG notariés + signatures EdDSA — Rechercher les mises à jour… télécharge, remplace et relance.",
+        "zh": "Sparkle 2 + 已公证 DMG + EdDSA 签名——检查更新即可下载、替换并重启。"
+      }
+    },
+    {
+      "h": {
+        "en": "No SDK, pure REST",
+        "fr": "Pas de SDK, REST pur",
+        "zh": "无 SDK，纯 REST"
+      },
+      "p": {
+        "en": "Talks to the same Hayward cloud as the official apps through three documented endpoints. Nothing else.",
+        "fr": "Parle au même cloud Hayward que les apps officielles via trois endpoints documentés. Rien d'autre.",
+        "zh": "通过三个已记录的端点与官方应用相同的 Hayward 云通信,仅此而已。"
+      }
+    }
+  ],
+  "chapters": [
+    {
+      "id": "install",
+      "h": {
+        "en": "Installed in a minute",
+        "fr": "Installée en une minute",
+        "zh": "一分钟完成安装"
+      },
+      "blocks": [
+        {
+          "type": "steps",
+          "items": [
+            {
+              "en": "<b>Download.</b> Grab the latest signed .dmg from GitHub Releases and mount it.",
+              "fr": "<b>Télécharger.</b> Récupérez le dernier .dmg signé depuis GitHub Releases et montez-le.",
+              "zh": "<b>下载。</b>从 GitHub Releases 获取最新签名的 .dmg 并挂载。"
+            },
+            {
+              "en": "<b>Drag &amp; drop.</b> Drop Hayward Monitor into /Applications. Gatekeeper accepts it — notarized by Apple.",
+              "fr": "<b>Glisser-déposer.</b> Déposez Hayward Monitor dans /Applications. Gatekeeper l'accepte — notariée par Apple.",
+              "zh": "<b>拖放。</b>将 Hayward Monitor 拖入 /Applications。已经 Apple 公证，Gatekeeper 直接放行。"
+            },
+            {
+              "en": "<b>Sign in.</b> Use your PoolWatch / Vistapool account. Your pool appears; you're in control.",
+              "fr": "<b>Connexion.</b> Utilisez votre compte PoolWatch / Vistapool. Votre piscine apparaît ; vous avez la main.",
+              "zh": "<b>登录。</b>使用您的 PoolWatch / Vistapool 账户登录，泳池即刻呈现，尽在掌控。"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "close": {
+    "h": {
+      "en": "Your pool, from your Mac.",
+      "fr": "Votre piscine, depuis votre Mac.",
+      "zh": "在 Mac 上掌控您的泳池。"
+    },
+    "p": {
+      "en": "macOS 14+ · Developer ID signed &amp; notarized · Sparkle 2 updates · MIT license",
+      "fr": "macOS 14+ · Signée Developer ID &amp; notariée · Mises à jour Sparkle 2 · Licence MIT",
+      "zh": "macOS 14+ · Developer ID 签名并经公证 · Sparkle 2 更新 · MIT 许可证"
+    },
+    "actions": [
+      {
+        "primary": true,
+        "href": "https://github.com/vincentlauriat/HaywardMonitor/releases/latest",
+        "label": {
+          "en": "Download for macOS",
+          "fr": "Télécharger pour macOS",
+          "zh": "下载 macOS 版"
+        }
+      },
+      {
+        "href": "https://github.com/vincentlauriat/HaywardMonitor/releases",
+        "label": "Releases"
+      }
+    ]
+  },
+  "colophon": {
+    "notes": [
+      {
+        "en": "Unofficial project — not affiliated with Hayward or Sugar Valley. It controls your own pool through your own account, using the same cloud API as the official apps.",
+        "fr": "Projet non officiel — sans affiliation avec Hayward ou Sugar Valley. Il pilote votre propre piscine via votre propre compte, avec la même API cloud que les apps officielles.",
+        "zh": "非官方项目——与 Hayward 或 Sugar Valley 无关。它通过您自己的账户、使用与官方应用相同的云 API 控制您自己的泳池。"
+      },
+      "<a href=\"https://lauriat.fr\">lauriat.fr</a>"
+    ]
+  }
+}
